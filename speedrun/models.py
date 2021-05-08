@@ -65,6 +65,7 @@ class Run(models.Model):
 
     def __str__(self):
         return "Speedrun instance; " + \
-               "user=" + str(self.user.name) + "; " + \
-               "Time=" + str(self.time)
+               "User=" + str(self.user.name) + "; " + \
+               "Time=" + str(self.time)+ "; " + \
+               "Character=" + self.character
 

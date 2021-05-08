@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+    Fastest Speedruns
+</title>
+<table id="speed_run_table">
+    <tbody>
+    <tr>
+        <th>Character</th>
+        <th>User</th>
+        <th>Time(hr:min)</th>
+        <th>Mode</th>
+        <th>Fate</th>
+        <th>Difficulty</th>
+    </tr>
+
+    {% if top_runs_list %}
+    {% for run in top_runs_list %}
+        <tr>
+            <td>{{ run.character }}</td>
+            <td>{{ run.user }}</td>
+            <td>{{ run.time|time:"H:i" }}</td>
+            <td>{{ run.artifacts }}</td>
+            <td>{{ run.mithrix }}</td>
+            <td>{{ run.difficulty }}</td>
+        </tr>
+    {% endfor %}
+    {% else %}
+        <p>I can't find any runs for some reason.</p>
+    {% endif %}
+
+    </tbody>
+</table>
+</html>
